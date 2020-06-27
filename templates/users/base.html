@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Basepage</title>
+       
+        <link rel="stylesheet" href="{%static 'css/regstyle.css'%}">
+    </head>   
+    <body>
+        <div class="reg-page"> 
+            {% block child_block %}
+            {% endblock %}   
+        </div>
+    </body>
+</html>

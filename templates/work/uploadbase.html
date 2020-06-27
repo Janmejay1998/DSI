@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Upload</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script>
+            $(document).ready(function() {
+                // messages timeout for 10 sec 
+                setTimeout(function() {
+                    $('.msg').fadeOut('slow');
+                }, 5000); // <-- time in milliseconds, 1000 =  1 sec
+            });
+        </script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    </head>   
+    <body style="background-color: #001f3f;">
+            {% block child_block %}
+            {% endblock %} 
+            {% if messages %}
+                {% for message in messages %}
+                <div class="msg">
+                <div class="alert alert-success" role="alert">   
+                {{ message }}
+                </div>
+                </div>
+                {% endfor %}
+        
+            {% endif %}  
+    </body>
+</html>

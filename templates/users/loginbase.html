@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+{% extends 'users/login.html' %}
+{% block child_block %}
+<div class="form">
+    <form method = 'post'>
+        {{log_form.as_p}}
+        {% csrf_token %}
+        <button type="login" class="btn btn-primary" >login</button>
+        <p class="message">Not registered? <a href="/submit">Create an account</a></p>
+    </form>
+</div>
+{% endblock %}  

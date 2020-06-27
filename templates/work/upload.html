@@ -1,0 +1,26 @@
+{% extends 'work/uploadbase.html' %}
+{% block child_block %}
+<nav class="navbar navbar-dark bg-dark" >
+   <span class="navbar-brand">
+      ECDSA File Digital Signing 
+   </span>
+   <span class="navbar-brand mb-0 h1">Welcome {{ a }} </span>
+ </nav>
+<form method="POST" enctype="multipart/form-data">
+   {% csrf_token %}
+   <div class="input-group mb-3">
+      <div class="custom-file">
+        <input type="file" class="custom-file-input" id="inputGroupFile02" name="document">
+        <label class="custom-file-label" for="inputGroupFile02" aria-describedby="inputGroupFileAddon02">Choose file</label>
+      </div>
+   </div>
+   <button type="submit" class="btn btn-secondary" name="sbutton">Upload File</button>
+   <button type="submit" class="btn btn-info" name="ebutton">Encrypt</button>
+   <button type="submit" class="btn btn-success" name="vbutton">Verify</button>
+   <button type="submit" class="btn btn-outline-danger" name="lbutton">LogOut</button>
+</form>   
+   
+{% if url %}
+<p>Uploaded File: <a href="{{ url }}">{{ url }}</a></p>
+{% endif %}
+{% endblock %}  
